@@ -1,0 +1,18 @@
+﻿@model WebApplicationEmpty.ViewModels.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "Home page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>All Restaurants</h1>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant);
+}
+
+<div>
+    <a class="btn btn-primary" asp-action="Create">Add Restaurant</a>
+</div>
+
